@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Navbar from './(compunents)/navbar'
 import './App.css';
 import { BrowserRouter, Routes , Route} from 'react-router-dom';

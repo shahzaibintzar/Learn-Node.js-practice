@@ -27,8 +27,12 @@
 
 const express = require('express');
 const User = require('./db/user');
+const cors = require('cors');
+
 require('./db/config');
 const app = express();
+app.use(cors()); 
+
 
 app.use(express.json());
 app.post("/register",async (req,res)=>{
