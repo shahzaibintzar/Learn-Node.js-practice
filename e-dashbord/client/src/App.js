@@ -1,7 +1,9 @@
 import logo from './logo.svg';
-import Navbar from './navbar'
+import Navbar from './(compunents)/navbar'
 import './App.css';
 import { BrowserRouter, Routes , Route} from 'react-router-dom';
+import Footer from './(compunents)/Footer';
+import SignUp from './(compunents)/SignUp';
 
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
       <Route path="/update" element={<h1>Update Products Page</h1>} />
       <Route path="/logout" element={<h1>Logout Products Page</h1>} />
       <Route path="/profile" element={<h1>Profile Products Page</h1>} />
+      <Route path="/signup" element={<SignUp/>} />
     </Routes>
     </BrowserRouter>
+    <Footer/>
    </div>
   );
 }

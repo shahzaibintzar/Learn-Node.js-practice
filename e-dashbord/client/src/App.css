@@ -9,6 +9,46 @@
   }
 }
 
+
+.nav-ul li a{
+  color: azure;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nav-ul{
+  padding: 5px;
+  margin: 0;
+  background-color: skyblue;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: skyblue;
+}
+.register{
+  margin-left: 30%;
+}
+.input{
+  display: block;
+  width: 300px;
+  padding: 7px;
+  margin: 25px;
+  border: 1px solid skyblue;
+  border-radius: 10px;
+}
+.btn{
+  margin: 25px;
+  padding: 10px;
+  width: 150px;
+  background-color: skyblue;
+  border: 1px solid ;
+  border-radius: 7px;
+  cursor: pointer;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
