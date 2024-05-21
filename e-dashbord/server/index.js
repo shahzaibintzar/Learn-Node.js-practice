@@ -38,6 +38,24 @@ app.use(express.json());
 app.post("/register",async (req,res)=>{
   const user = new User(req.body)
   const result = await user.save();
+  // result = result.toObject();
+  // delete result.password
 res.send(result);
+})
+
+
+
+app.post('/login',async (req,res)=>{
+  if(req.body.email && req.body.password)
+    {
+      let user = await User.findOne(req.body).select('-password')
+      if(user){
+        res.send(user)
+      }else{
+        res.status(404).send('user not found')
+      }
+    }else{
+      res.status(404).send('user Data Missing')
+    }
 })
 app.listen(4000)

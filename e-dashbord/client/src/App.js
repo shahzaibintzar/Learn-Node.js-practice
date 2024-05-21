@@ -1,9 +1,10 @@
-import Navbar from './(compuoents)/navbar'
+import Navbar from './(components)/navbar'
 import './App.css';
 import { BrowserRouter, Routes , Route} from 'react-router-dom';
-import Footer from './(compuoents)/Footer';
-import SignUp from './(compuoents)/SignUp';
-import PrivateComponent from './(compuoents)/PrivateComponent';
+import Footer from './(components)/Footer';
+import SignUp from './(components)/SignUp';
+import PrivateComponent from './(components)/PrivateComponent';
+import Login from './(components)/Login';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     </Route>
 
       <Route path="/signup" element={<SignUp/>} />
+      <Route path="/login" element={<Login/>} />
     </Routes>
     </BrowserRouter>
     <Footer/>

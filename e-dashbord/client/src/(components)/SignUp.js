@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function SignUp() {
     const [name, setName] = useState('')
@@ -65,6 +65,7 @@ export default function SignUp() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder='Enter Your Password'
             />
+            <Link to='/login'><button  type='button' >Login</button></Link>
             <button className='btn' type='button' onClick={getData}>Sign Up</button>
         </div>
     )
