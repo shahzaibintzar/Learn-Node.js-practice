@@ -53,6 +53,16 @@
   border-radius: 7px;
   cursor: pointer;
 }
+.nav-right{
+  text-align: right;
+}
+.logo{
+  width: 45px;
+ float: left;
+ margin-top: 3px;
+ margin-left: 20px;
+ border-radius: 50%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
