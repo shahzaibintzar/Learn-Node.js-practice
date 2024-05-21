@@ -27,6 +27,7 @@
 
 const express = require('express');
 const User = require('./db/user');
+const Product = require('./db/Product');
 const cors = require('cors');
 
 require('./db/config');
@@ -58,4 +59,13 @@ app.post('/login',async (req,res)=>{
       res.status(404).send('user Data Missing')
     }
 })
+
+
+app.post('/addProduct', async (req, res) =>{
+  const product = new Product(req.body);
+  const result = await product.save();
+  res.send(result);
+})
+
+
 app.listen(4000)
