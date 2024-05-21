@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function SignUp() {
@@ -7,6 +7,15 @@ export default function SignUp() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
+
+    useEffect(()=>{
+    const auth = localStorage.getItem('user');
+        
+        if (auth)
+       {
+            navigate('/');
+        }
+    })
     const getData = async () => {
         try {
             const response = await fetch("http://localhost:4000/register", {
@@ -23,9 +32,10 @@ export default function SignUp() {
 
             const result = await response.json();
             console.log(result);
-            if (result) {
+            // if (result) {
+                localStorage.setItem("user", JSON.stringify(result))
                 navigate('/');
-            }
+            // }
         } catch (error) {
             console.error('Error fetching data:', error);
         }
