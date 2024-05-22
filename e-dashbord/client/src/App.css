@@ -80,6 +80,17 @@
   border: 1px solid skyblue;
   width: 150px;
 }
+
+
+.search-box-product {
+  width: 400px;
+  margin: 20px;
+  height: 40px;
+  border: 1px solid skyblue;
+  padding-left: 20px;
+  border-radius: 15px;
+}
+
 .productList ul{
   margin: 0;
 }
