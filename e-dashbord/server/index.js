@@ -85,4 +85,25 @@ app.delete('/product/:id',async(req, res) => {
 })
 
 
+app.get('/product/:id', async (req, res) => {
+let result = await Product.findOne({_id: req.params.id})
+  if(result){
+    res.send(result)
+  }else{
+    res.status(404).send('No Products Found')
+  }
+})
+
+
+
+app.put('/product/:id',async (req, res) => {
+  let result = await Product.updateOne(
+    {_id:req.params.id},
+  {
+    $set:req.body
+  })
+  res.send(result)
+});
+
+
 app.listen(4000)
