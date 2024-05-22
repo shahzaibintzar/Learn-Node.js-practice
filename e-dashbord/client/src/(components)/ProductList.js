@@ -12,7 +12,24 @@ export default function ProductList() {
         setProduct(result);
     }
     console.log(product)
-  return (
+
+const deleteProduct = async (id) =>{
+    let result = await fetch(`http://localhost:4000/product/${id}`,{
+        method:'DELETE',
+
+    });
+    result = await result.json();
+    getProduct();
+    if(result){
+        alert('Product deleted successfully');
+    }
+}
+
+const UpdateProduct = async (id) =>{
+// console.log(id)
+
+}
+return (
     <div className='productList'>
       <h1>Product</h1>
       <ul>
@@ -21,6 +38,7 @@ export default function ProductList() {
         <li>Price</li>
         <li>Category</li>
         <li>Company</li>
+        <li>Operation</li>
       </ul>
       {
         product.map((item,key) => (
@@ -30,6 +48,7 @@ export default function ProductList() {
             <li>{item.price}</li>
             <li>{item.category}</li>
             <li>{item.company}</li>
+            <li><button onClick={()=>{deleteProduct(item._id)}}>Delete </button> <button onClick={()=>{UpdateProduct(item._id)}}> Detail</button></li>
           </ul>
         ))
       }
@@ -55,4 +74,4 @@ export default function ProductList() {
       </table> */}
     </div>
   )
-}
+};
